@@ -39,9 +39,8 @@ export class Cell {
 
     const min = Math.min(this.y, target.y);
     const max = Math.max(this.y, target.y);
-
     for (let y = min + 1; y < max; y++) {
-      if (!this.board.getCell(this.x, y).isEmpty()) {
+      if(!this.board.getCell(this.x, y).isEmpty()) {
         return false
       }
     }
@@ -85,9 +84,9 @@ export class Cell {
   }
 
   addLostFigure(figure: Figure) {
-    // figure.color === Colors.BLACK
-    //   ? this.board.lostBlackFigures.push(figure)
-    //   : this.board.lostWhiteFigures.push(figure)
+    figure.color === Colors.BLACK
+      ? this.board.lostBlackFigures.push(figure)
+      : this.board.lostWhiteFigures.push(figure)
   }
 
   moveFigure(target: Cell) {
